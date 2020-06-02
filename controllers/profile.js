@@ -15,3 +15,43 @@ exports.createProfile =async (data) =>{
           throw err
               }
 }
+
+//@Desc Updates a user profile
+//@Route PUT /dev/profiles/{id}
+//@Access Private
+exports.updateProfile =  async(id,data) =>{
+       try {
+          let profile =  await Profile.findById(id);
+          if(!profile){
+              throw(new Error('profile was not found'))
+          }
+          profile =  await Profile.findByIdAndUpdate(id,data,{new:true,runValidators:true});
+          return   profile;
+       } catch (err) {
+            console.log(err);
+            throw err;
+       }
+}
+
+
+
+//@Desc deletes a user profile
+//@Route DELETE /dev/profiles/{id}
+//@Access Private
+exports.deleteProfile =  async(id) =>{
+    try {
+        let profile =  await Profile.findById(id);
+        if(!profile){
+             throw('profile not found')
+        }
+        await profile.remove();
+
+        return profile;
+
+    } catch (err) {
+         console.log(err)
+         throw(err)
+    }
+}
+
+

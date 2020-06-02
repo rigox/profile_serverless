@@ -34,3 +34,31 @@ functions:
               method: get            
               cors:
                   origin: '*'
+  updateProfile:
+      handler: api/UpdateProfile.handler
+      description: updates a single profile
+      events:
+            - http:
+                path: profiles/{id}
+                method: put 
+                cors:
+                    origin: '*'
+  deleteProfile:
+      handler: api/deleteProfile.handler
+      description: deletes a profile
+      events:
+          - http:
+              path: profiles/{id}
+              method: delete
+              cors: 
+                origin: '*'
+  getProfile:
+      handler: api/getProfile.handler
+      description: gets a single profile
+      events:
+          - http:
+              path: profiles/{id}    
+              method: get
+              cors:
+                  origin: '*'
+                  
