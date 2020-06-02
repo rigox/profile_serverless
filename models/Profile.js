@@ -12,7 +12,7 @@ const profileSchemas =  new Schema({
            require:[true,'age is required']
       },
       DOB:{
-           type:Date,
+           type:String,
            required:[true,'DOB is required']
       },
       bio:{

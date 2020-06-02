@@ -21,8 +21,16 @@ functions:
     description: CREATES a new profile
     events:
       - http:
-          path: profiles/
+          path: profiles
           method: post
           cors:
             origin: '*'
-
+  getProfiles:
+      handler: api/getNotes.handler
+      description: Gets all the profiles
+      events:
+          - http:
+              path: profiles
+              method: get            
+              cors:
+                  origin: '*'
