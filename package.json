@@ -12,6 +12,6 @@
     "colors": "^1.4.0",
     "config": "^3.3.1",
     "mongoose": "^5.9.16",
-    "serverless-offline": "^6.2.0"
+    "serverless-offline": "^12.0.4"
   }
 }
